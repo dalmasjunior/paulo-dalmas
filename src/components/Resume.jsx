@@ -1,11 +1,17 @@
 import PropTypes from 'prop-types'
 import Section from './Section'
+import SkillBadge from './SkillBadge'
+import avatar from '../assets/avatar.svg'
+import jsIcon from '../assets/javascript.svg'
+import reactIcon from '../assets/react.svg'
+import nodeIcon from '../assets/nodejs.svg'
 
 export default function Resume({ data }) {
   const { about, experience, skills, education, contact } = data
   return (
     <div>
       <Section title={about.title}>
+        <img src={avatar} alt="Avatar" className="avatar" />
         <p>{about.text}</p>
       </Section>
       <Section title={experience.title}>
@@ -16,11 +22,16 @@ export default function Resume({ data }) {
         </ul>
       </Section>
       <Section title={skills.title}>
-        <ul>
-          {skills.items.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
+        <div>
+          {skills.items.map((item) => {
+            let icon
+            if (item.toLowerCase().includes('react')) icon = reactIcon
+            else if (item.toLowerCase().includes('node')) icon = nodeIcon
+            else if (item.toLowerCase().includes('javascript')) icon = jsIcon
+            else icon = reactIcon
+            return <SkillBadge key={item} name={item} icon={icon} />
+          })}
+        </div>
       </Section>
       <Section title={education.title}>
         <ul>
