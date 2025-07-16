@@ -1,0 +1,22 @@
+.terminal {
+  font-family: 'Courier New', monospace;
+  background: #000;
+  color: #0f0;
+  padding: 1rem;
+  border-radius: 4px;
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1em;
+  background: #0f0;
+  margin-left: 2px;
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}

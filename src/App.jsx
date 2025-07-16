@@ -3,6 +3,7 @@ import './App.css'
 import { content } from './content'
 import LanguageToggle from './components/LanguageToggle'
 import Resume from './components/Resume'
+import TerminalIntro from './components/TerminalIntro'
 
 export default function App() {
   const [lang, setLang] = useState('en')
@@ -10,6 +11,7 @@ export default function App() {
   return (
     <div>
       <LanguageToggle language={lang} onChange={setLang} />
+      <TerminalIntro />
       <Resume data={content[lang]} />
     </div>
   )

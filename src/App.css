@@ -4,6 +4,17 @@
   padding: 2rem;
 }
 
+.avatar {
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+@media (max-width: 600px) {
+  #root {
+    padding: 1rem;
+  }
+}
+
 section {
   margin-bottom: 2rem;
 }
